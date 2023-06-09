@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              网盘直链下载助手
-// @namespace         https://github.com/syhyz1990/baiduyun
+// @namespace         https://github.com/xiaopeng12138/baiduyun
 // @version           6.1.1
 // @author            YouXiaoHou
 // @description       👆👆👆👆👆👆👆 - 支持批量获取 ✅百度网盘 ✅阿里云盘 ✅天翼云盘 ✅迅雷云盘 ✅夸克网盘 ✅移动云盘 六大网盘的直链下载地址，配合 IDM，Xdown，Aria2，Curl，比特彗星等工具高效🚀🚀🚀下载，完美适配 Chrome，Edge，FireFox，360，QQ，搜狗，百分，遨游，星愿，Opera，猎豹，Vivaldi，Yandex，Kiwi 等 18 种浏览器。可在无法安装客户端的环境下使用，助手免费开源。😎
@@ -1137,7 +1137,7 @@
             (`https://api.youxiaohou.com/config?ver=${version}&a=${author}`, {}, {}, 'text');
             pan = JSON.parse(base.d(res));
             Object.freeze && Object.freeze(pan);
-            pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+            this.addButton();
             base.createTip();
             base.registerMenuCommand();
         }
@@ -1478,7 +1478,7 @@
             (`https://api.youxiaohou.com/config/ali?ver=${version}&a=${author}`, {}, {}, 'text');
             pan = JSON.parse(base.d(res));
             Object.freeze && Object.freeze(pan);
-            pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+            this.addButton();
             base.createTip();
             base.registerMenuCommand();
         }
@@ -1808,7 +1808,7 @@
             (`https://api.youxiaohou.com/config/tianyi?ver=${version}&a=${author}`, {}, {}, 'text');
             pan = JSON.parse(base.d(res));
             Object.freeze && Object.freeze(pan);
-            pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+            this.addButton();
             this.getToken();
             base.createTip();
             base.registerMenuCommand();
@@ -2150,7 +2150,7 @@
             (`https://api.youxiaohou.com/config/xunlei?ver=${version}&a=${author}`, {}, {}, 'text');
             pan = JSON.parse(base.d(res));
             Object.freeze && Object.freeze(pan);
-            pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+            this.addButton();
             base.createTip();
             base.registerMenuCommand();
         }
@@ -2180,7 +2180,7 @@
                 if (e.oldURL === home && e.newURL === all) return;
                 await base.sleep(150);
                 if ($('.quark-button').length > 0) return;
-                pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+                this.addButton();
             });
             doc.on('click', '.pl-button-mode', (e) => {
                 mode = e.target.dataset.mode;
@@ -2448,7 +2448,7 @@
             (`https://api.youxiaohou.com/config/quark?ver=${version}&a=${author}`, {}, {}, 'text');
             pan = JSON.parse(base.d(res));
             Object.freeze && Object.freeze(pan);
-            pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+            this.addButton();
             this.addPageListener();
             base.createTip();
             base.createDownloadIframe();
@@ -2838,7 +2838,7 @@
             (`https://api.youxiaohou.com/config/yidong?ver=${version}&a=${author}`, {}, {}, 'text');
             pan = JSON.parse(base.d(res));
             Object.freeze && Object.freeze(pan);
-            pan.num === base.getValue('setting_init_code') ? this.addButton() : this.addInitButton();
+            this.addButton();
             base.createTip();
             base.registerMenuCommand();
         }
